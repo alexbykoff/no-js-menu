@@ -1,14 +1,17 @@
-body,
-html {
-    margin: 0;
-    padding: 0;
+body {
     font-family: 'Economica', sans-serif;
     font-size: 1.2rem;
 }
+
+/*Just giving out page a little space*/
+
 .content-wrapper {
     padding: 3rem 4rem;
     margin: 2rem;
 }
+
+/*We are fixing a menu and pulling them out of the screen by negative 'left'*/
+
 .side-menu {
     padding: 0;
     margin: 0;
@@ -16,17 +19,26 @@ html {
     position: fixed;
     left: -120px;
     top: 100px;
-    opacity: .98;
-    border-radius: 0 6px 6px 0;
+    opacity: .95;
     overflow: hidden;
+    -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
 }
+
+/*We need to hide the default input box*/
+
 #menu-button {
     display: none;
 }
+
+/*if checkbox is checked next sibling's .side menu child slides in*/
+
 #menu-button:checked + .menu-wrap .side-menu {
     left: 0px;
 }
+
+/*this is the label for the checkbox which act as a button for our menu*/
+
 .menu-button--label {
     color: black;
     position: fixed;
@@ -36,12 +48,21 @@ html {
     text-align: center;
     line-height: 0;
     cursor: pointer;
+    -webkit-transition: all 1s;
     transition: all 1s;
 }
+
+/*Fancy rotation effect for our menu button. It rotates back when mouse leaves it */
+
 .menu-button--label:hover {
+    -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
+    -webkit-transition: all 1s;
     transition: all 1s;
 }
+
+/*We are giving the li item a shorter width to activate 'pop-out' effect when you hover*/
+
 .side-menu--list li {
     font-size: 0;
     width: 110px;
@@ -61,6 +82,9 @@ html {
     list-style: none;
     padding-left: 0;
 }
+
+/*.subset is a sub-menu that we are styling to stand out a bit*/
+
 .side-menu--list li a.subset {
     font-size: 1.4rem;
     height: 2.2rem;
@@ -68,21 +92,34 @@ html {
     padding-left: .5rem;
     background: #222;
 }
+
+/*Applying overflow:hidden to get rid of the cluttering when the height is minimized*/
+
 .side-menu--list li {
     height: 2.2rem;
     overflow: hidden;
+    -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
 }
+
+/*when you hover a li it expands to show all the menu links(and expands itself only)*/
+
 .side-menu--list li:hover {
     height: 8.2rem;
+    -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
     cursor: pointer;
     width: 180px;
 }
+
+/*We are skipping a sub-menu link and applying transformation to the follow-ups*/
+
 .side-menu--list li a:not(:first-child):hover {
     cursor: pointer;
     background-color: #fff;
     color: #333;
+    -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
+    -webkit-transform: translateX(10px);
     transform: translateX(10px);
 }
