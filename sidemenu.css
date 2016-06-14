@@ -1,0 +1,88 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Economica', sans-serif;
+    font-size: 1.2rem;
+}
+.content-wrapper {
+    padding: 3rem 4rem;
+    margin: 2rem;
+}
+.side-menu {
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    position: fixed;
+    left: -120px;
+    top: 100px;
+    opacity: .98;
+    border-radius: 0 6px 6px 0;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+}
+#menu-button {
+    display: none;
+}
+#menu-button:checked + .menu-wrap .side-menu {
+    left: 0px;
+}
+.menu-button--label {
+    color: black;
+    position: fixed;
+    top: 50px;
+    left: 10px;
+    font-size: 3rem;
+    text-align: center;
+    line-height: 0;
+    cursor: pointer;
+    transition: all 1s;
+}
+.menu-button--label:hover {
+    transform: rotateY(180deg);
+    transition: all 1s;
+}
+.side-menu--list li {
+    font-size: 0;
+    width: 110px;
+}
+.side-menu--list a {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    height: 2rem;
+    line-height: 2rem;
+    background: #333;
+    padding-left: 1rem;
+    width: 180px;
+    font-size: 1.2rem;
+}
+.side-menu--list {
+    list-style: none;
+    padding-left: 0;
+}
+.side-menu--list li a.subset {
+    font-size: 1.4rem;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    padding-left: .5rem;
+    background: #222;
+}
+.side-menu--list li {
+    height: 2.2rem;
+    overflow: hidden;
+    transition: all .4s ease-in-out;
+}
+.side-menu--list li:hover {
+    height: 8.2rem;
+    transition: all .4s ease-in-out;
+    cursor: pointer;
+    width: 180px;
+}
+.side-menu--list li a:not(:first-child):hover {
+    cursor: pointer;
+    background-color: #fff;
+    color: #333;
+    transition: all .3s ease-in-out;
+    transform: translateX(10px);
+}
